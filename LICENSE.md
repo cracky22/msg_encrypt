@@ -32,7 +32,7 @@ Diese Lizenzvereinbarung ("Lizenz") gilt für die Nutzung der Software msg-encry
    Diese Lizenz unterliegt den Gesetzen in Deutschland und wird in Übereinstimmung mit diesen ausgelegt.
 
 **Indem Sie die Software installieren, kopieren oder anderweitig verwenden, erklären Sie sich mit den Bedingungen dieser Lizenz einverstanden.**
-[zurück zu msg](javascript:history.back())
+
 
 
 **Lizenzbedingungen aktualisiert am 2024-08-19**
