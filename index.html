@@ -281,7 +281,9 @@
                         target.classList.add('active');
                     }
                     if (title) {
-                        document.getElementById("masterTitle").innerText = title;
+                        setTimeout(() => {
+                            document.getElementById("masterTitle").innerText = title;
+                        }, 400);
                     }
                     if (id !== "home") {
                         document.getElementById("homeIcon").style.display = "block";
