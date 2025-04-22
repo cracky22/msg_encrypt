@@ -85,7 +85,8 @@
                         <p style="text-align: justify;">
                             Stell dir vor, du willst jemandem eine vertrauliche Nachricht schicken – wie ein Liebesbrief
                             oder wichtige Geschäftsinformationen. Natürlich willst du, dass nur der Empfänger sie lesen
-                            kann. Genau dafür ist diese Verschlüsselung gemacht!
+                            kann. Genau dafür ist diese Verschlüsselung gemacht! <strong>msg</strong> ist deine App für 
+                            sichere, verschlüsselte Kommunikation – einfach zu bedienen und technisch auf dem neuesten Stand.
                         </p>
                         <br><br>
                         <button onclick="showSection('definition', 'Was ist msg');"
@@ -96,11 +97,6 @@
 
                     <div id="definition" class="section" style="max-width: 80%;">
                         <h4>📱 msg – Sicher. Schnell. Verschlüsselt.</h4>
-
-                        <p>
-                            <strong>msg</strong> ist deine App für sichere, verschlüsselte Kommunikation – einfach zu
-                            bedienen und technisch auf dem neuesten Stand.
-                        </p>
 
                         <div class="highlight">
                             <p>
@@ -226,7 +222,7 @@
                         <h4>Warum ist Fernet sicher?</h4>
                         <ul>
                             <li>✅ Nutzt moderne Verschlüsselung (AES in CBC-Modus mit 128 Bit)</li>
-                            <li>✅ Authentifizierung durch HMAC mit SHA256 – verhindert Manipulationen</li>
+                            <li>✅ Authentifizierung durch HMAC mit SHA256 – verhindert Manipulationen von Angreifern</li>
                             <li>✅ Einfach zu implementieren, auch ohne tiefes Kryptowissen</li>
                         </ul>
 
@@ -236,7 +232,7 @@
                             <br>
                             <a href="https://cryptography.io/en/latest/fernet/" target="_blank">
                                 → cryptography.io – Fernet Documentation
-                            </a>
+                            </a><br><small>(externer Link)</small>
                         </p>
                         <br><br>
                         <button onclick="showSection('advantages', 'Vorteile');"
