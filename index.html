@@ -34,6 +34,7 @@
         background-color: #e0f0ff;
         padding: 10px;
         border-left: 4px solid #007BFF;
+        border-radius: 15px;
     }
 
     ul,
@@ -57,37 +58,45 @@
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">Menü</span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" id="homeLink" onclick="showSection('home', 'msg-encrypt');"
-                    style="display: none;">Startseite</a>
+                <a class="mdl-navigation__link" id="homeLink" onclick="showSection('home', 'msg-encrypt');"style="display: none;">Startseite</a>
                 <a class="mdl-navigation__link" onclick="showSection('definition', 'Was ist msg');">Was ist msg?</a>
-                <a class="mdl-navigation__link"
-                    onclick="showSection('explaination', 'Funktionsweise');">Funktionsweise</a>
-                <a class="mdl-navigation__link"
-                    onclick="showSection('detailexplain', 'Erklärung im Detail');">Verschlüsselung im Detail</a>
+                <a class="mdl-navigation__link"onclick="showSection('explaination', 'Funktionsweise');">Funktionsweise von msg</a>
+                <a class="mdl-navigation__link"onclick="showSection('example', 'Beispiel');">Beispiel der Verschlüsselung</a>
+                <a class="mdl-navigation__link"onclick="showSection('detailexplain', 'Erklärung im Detail');">Verschlüsselung im Detail</a>
                 <a class="mdl-navigation__link" onclick="showSection('advantages', 'Vorteile von msg');">Vorteile</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
             <div class="page-content">
                 <center>
-                    <div id="home" class="section active">
+                    <div id="home" class="section active" style="max-width: 80%;">
                         <h4>🔐 Sicher. Einfach. Verständlich.</h4>
-                        <p>
+                        <p style="text-align: justify;">
                             Stell dir vor, du willst jemandem eine vertrauliche Nachricht schicken – wie ein Liebesbrief
                             oder wichtige Geschäftsinformationen. Natürlich willst du, dass nur der Empfänger sie lesen
                             kann. Genau dafür ist diese Verschlüsselung gemacht!
                         </p>
+                    </div>
 
+                    <div id="definition" class="section" style="max-width: 80%;">
+                        <h4>Was ist msg?</h4>
+                        <p>hi das ist ein test</p>
+                    </div>
+
+                    <div id="example" class="section" style="max-width: 80%;">
+                        <h4>Beispieltext: <b>Hallo</b></h4>
+                        <p>in verschlüsselt:</p>
+                        <div>
+                            <code style=" line-break: anywhere;">
+                            Z0FBQUFBQm9DQWM5YjFKVGFLckx3X0UtQ0pzdHFiTlFUbks5cTFRVk9ZNmo2QzNyajJUNDRUcHFac3duZmVqZnhVZFFCb08tYnFMcHNkUDBkZ2xoZmpLUERKVkpqVlpaQ2c9PQ==
+                        </code>
+                        </div>
+                        <br><br>
                         <div class="highlight">
-                            <p><strong>Fernet-Verschlüsselung</strong> schützt deine Nachricht, indem sie sie in
+                            <p>Die <strong>Fernet-Verschlüsselung</strong> schützt deine Nachricht, indem sie sie in
                                 unlesbaren Zeichensalat verwandelt. Nur mit dem passenden Schlüssel kann sie wieder
                                 entschlüsselt werden.</p>
                         </div>
-                    </div>
-
-                    <div id="definition" class="section">
-                        <h4>Was ist msg?</h4>
-                        <p>hi das ist ein test</p>
                     </div>
 
                     <div id="explaination" class="section">
