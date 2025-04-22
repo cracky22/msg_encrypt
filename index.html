@@ -65,17 +65,13 @@
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">Menü</span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" id="homeLink" onclick="showSection('home', 'msg-encrypt');"
-                    style="display: none;">Startseite</a>
-                <a class="mdl-navigation__link" onclick="showSection('definition', 'Was ist msg');">Was ist msg?</a>
-                <a class="mdl-navigation__link" onclick="showSection('explaination', 'Funktionsweise');">Funktionsweise
-                    von msg</a>
-                <a class="mdl-navigation__link" onclick="showSection('example', 'Beispiel');">Beispiel der
-                    Verschlüsselung</a>
-                <a class="mdl-navigation__link"
-                    onclick="showSection('detailexplain', 'Erklärung im Detail');">Verschlüsselung im Detail</a>
-                <a class="mdl-navigation__link" onclick="showSection('advantages', 'Vorteile von msg');">Vorteile</a>
-                <a class="mdl-navigation__link" onclick="showSection('imprint', 'Impressum');">Impressum</a>
+                <a class="mdnavlink mdl-navigation__link" id="homeLink" onclick="showSection('home', 'msg-encrypt');"style="display: none;">Startseite</a>
+                <a class="mdnavlink mdl-navigation__link" id="element1" onclick="showSection('definition', 'Was ist msg');hideLink('element1');">Was ist msg?</a>
+                <a class="mdnavlink mdl-navigation__link" id="element2" onclick="showSection('explaination', 'Funktionsweise');hideLink('element2');">Funktionsweisevon msg</a>
+                <a class="mdnavlink mdl-navigation__link" id="element3" onclick="showSection('example', 'Beispiel');hideLink('element3');">Beispiel derVerschlüsselung</a>
+                <a class="mdnavlink mdl-navigation__link" id="element4" onclick="showSection('detailexplain', 'Erklärung im Detail');hideLink('element4');">Verschlüsselung im Detail</a>
+                <a class="mdnavlink mdl-navigation__link" id="element5" onclick="showSection('advantages', 'Vorteile von msg');hideLink('element5');">Vorteile</a>
+                <a class="mdnavlink mdl-navigation__link" id="element6" onclick="showSection('imprint', 'Impressum');hideLink('element6');">Impressum</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
@@ -293,6 +289,15 @@
                     } else {
                         document.getElementById("homeIcon").style.display = "none";
                         document.getElementById("homeLink").style.display = "none";
+                    }
+                }
+                function hideLink(id) {
+                    const sections = document.querySelectorAll('.mdnavlink');
+                    sections.forEach(section => {
+                        section.style.display = "block";
+                    });
+                    if (id) {
+                        document.getElementById(id).style.display = "none";
                     }
                 }
             </script>
