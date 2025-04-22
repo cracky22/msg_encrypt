@@ -58,11 +58,15 @@
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">Menü</span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" id="homeLink" onclick="showSection('home', 'msg-encrypt');"style="display: none;">Startseite</a>
+                <a class="mdl-navigation__link" id="homeLink" onclick="showSection('home', 'msg-encrypt');"
+                    style="display: none;">Startseite</a>
                 <a class="mdl-navigation__link" onclick="showSection('definition', 'Was ist msg');">Was ist msg?</a>
-                <a class="mdl-navigation__link"onclick="showSection('explaination', 'Funktionsweise');">Funktionsweise von msg</a>
-                <a class="mdl-navigation__link"onclick="showSection('example', 'Beispiel');">Beispiel der Verschlüsselung</a>
-                <a class="mdl-navigation__link"onclick="showSection('detailexplain', 'Erklärung im Detail');">Verschlüsselung im Detail</a>
+                <a class="mdl-navigation__link" onclick="showSection('explaination', 'Funktionsweise');">Funktionsweise
+                    von msg</a>
+                <a class="mdl-navigation__link" onclick="showSection('example', 'Beispiel');">Beispiel der
+                    Verschlüsselung</a>
+                <a class="mdl-navigation__link"
+                    onclick="showSection('detailexplain', 'Erklärung im Detail');">Verschlüsselung im Detail</a>
                 <a class="mdl-navigation__link" onclick="showSection('advantages', 'Vorteile von msg');">Vorteile</a>
             </nav>
         </div>
@@ -77,18 +81,49 @@
                             kann. Genau dafür ist diese Verschlüsselung gemacht!
                         </p>
                         <br><br>
-                        <button onclick="showSection('definition', 'Was ist msg');" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
-                            entdecke msg 
+                        <button onclick="showSection('definition', 'Was ist msg');"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                            entdecke msg
                         </button>
                     </div>
 
                     <div id="definition" class="section" style="max-width: 80%;">
-                        <h4>Was ist msg?</h4>
-                        <p>msg ist ne app</p>
+                        <h4>📱 msg – Sicher. Schnell. Verschlüsselt.</h4>
+
+                        <p>
+                            <strong>msg</strong> ist deine App für sichere, verschlüsselte Kommunikation – einfach zu
+                            bedienen und technisch auf dem neuesten Stand.
+                        </p>
+
+                        <div class="highlight">
+                            <p>
+                                Die App nutzt die bewährte <strong>Fernet-Verschlüsselung</strong>, um deine Nachrichten
+                                zu schützen – das heißt: Nur du und der Empfänger können lesen, was geschrieben wurde.
+                            </p>
+                        </div>
+
+                        <h4>So funktioniert msg:</h4>
+                        <ul>
+                            <li>📲 Es gibt eine <strong>Android-App</strong>, mit der du bequem unterwegs Nachrichten
+                                senden und empfangen kannst.</li>
+                            <li>🧠 Im Hintergrund läuft ein <strong>Python-Server</strong>, der die Kommunikation
+                                zwischen den Geräten sichert und verarbeitet – natürlich ohne selbst Inhalte lesen zu
+                                können.</li>
+                            <li>💻 Für Entwickler, Power-User oder zum Experimentieren gibt es zusätzlich eine
+                                <strong>reine Python-Version</strong> der App, die direkt auf dem PC läuft – ideal z. B.
+                                für automatisierte Kommunikation oder Integration in eigene Projekte.</li>
+                        </ul>
+
+                        <p>
+                            Egal ob mobil oder direkt im Code: <strong>msg</strong> gibt dir volle Kontrolle über deine
+                            Daten – sicher, privat und Open-Source-freundlich.
+                        </p>
                         <br><br>
-                        <button onclick="showSection('example', 'Beispiel');" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                        <button onclick="showSection('example', 'Beispiel');"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
                             ein Beispiel dafür
                         </button>
+                        <br><br>
                     </div>
 
                     <div id="example" class="section" style="max-width: 80%;">
@@ -106,7 +141,8 @@
                                 entschlüsselt werden.</p>
                         </div>
                         <br><br>
-                        <button onclick="showSection('explaination', 'Funktionsweise');" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                        <button onclick="showSection('explaination', 'Funktionsweise');"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
                             Funktionsweise
                         </button>
                     </div>
@@ -124,7 +160,8 @@
                                 Nachricht gespeichert, um Manipulationen zu erkennen.</li><br>
                         </ul>
                         <br><br>
-                        <button onclick="showSection('detailexplain', 'Erklärung im Detail');" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                        <button onclick="showSection('detailexplain', 'Erklärung im Detail');"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
                             zur detaillierten Erklärung
                         </button>
                     </div>
@@ -195,7 +232,8 @@
                             </a>
                         </p>
                         <br><br>
-                        <button onclick="showSection('advantages', 'Vorteile');" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                        <button onclick="showSection('advantages', 'Vorteile');"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
                             Vorteile
                         </button>
                         <br><br>
