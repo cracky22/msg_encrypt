@@ -7,7 +7,7 @@
     <link rel="shortcut icon"
         href="https://cracky.ddns.net/services/apps/crackyOS/application/com.crackyOS.pyProjects/msg-encrypt/src/img/favicon.png"
         type="image/x-icon">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-blue.min.css" /> 
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-blue.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <title>msg-encrypt</title>
@@ -37,9 +37,12 @@
         border-radius: 15px;
     }
 
-    .mdl-layout-title, .mdl-navigation__link, .mdl-js-button {
+    .mdl-layout-title,
+    .mdl-navigation__link,
+    .mdl-js-button {
         font-weight: 550;
     }
+
     .mdl-js-button {
         border-radius: 20px;
     }
@@ -65,13 +68,22 @@
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">Menü</span>
             <nav class="mdl-navigation">
-                <a class="mdnavlink mdl-navigation__link" id="homeLink" onclick="showSection('home', 'msg-encrypt');"style="display: none;">Startseite</a>
-                <a class="mdnavlink mdl-navigation__link" id="element1" onclick="showSection('definition', 'Was ist msg');hideLink('element1');">Was ist msg?</a>
-                <a class="mdnavlink mdl-navigation__link" id="element2" onclick="showSection('explaination', 'Funktionsweise');hideLink('element2');">Funktionsweise von msg</a>
-                <a class="mdnavlink mdl-navigation__link" id="element3" onclick="showSection('example', 'Beispiel');hideLink('element3');">Verschlüsselung Beispiel</a>
-                <a class="mdnavlink mdl-navigation__link" id="element4" onclick="showSection('detailexplain', 'Erklärung im Detail');hideLink('element4');">Verschlüsselung im Detail</a>
-                <a class="mdnavlink mdl-navigation__link" id="element5" onclick="showSection('advantages', 'Vorteile von msg');hideLink('element5');">Vorteile von msg</a>
-                <a class="mdnavlink mdl-navigation__link" id="element6" onclick="showSection('imprint', 'Impressum');hideLink('element6');">Impressum</a>
+                <a class="mdnavlink mdl-navigation__link" id="homeLink" onclick="showSection('home', 'msg-encrypt');"
+                    style="display: none;">Startseite</a>
+                <a class="mdnavlink mdl-navigation__link" id="element1"
+                    onclick="showSection('definition', 'Was ist msg');hideLink('element1');">Was ist msg?</a>
+                <a class="mdnavlink mdl-navigation__link" id="element2"
+                    onclick="showSection('explaination', 'Funktionsweise');hideLink('element2');">Funktionsweise von
+                    msg</a>
+                <a class="mdnavlink mdl-navigation__link" id="element3"
+                    onclick="showSection('example', 'Beispiel');hideLink('element3');">Verschlüsselung Beispiel</a>
+                <a class="mdnavlink mdl-navigation__link" id="element4"
+                    onclick="showSection('detailexplain', 'Erklärung im Detail');hideLink('element4');">Verschlüsselung
+                    im Detail</a>
+                <a class="mdnavlink mdl-navigation__link" id="element5"
+                    onclick="showSection('advantages', 'Vorteile von msg');hideLink('element5');">Vorteile von msg</a>
+                <a class="mdnavlink mdl-navigation__link" id="element6"
+                    onclick="showSection('imprint', 'Impressum');hideLink('element6');">Impressum</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
@@ -82,8 +94,9 @@
                         <p style="text-align: justify;">
                             Stell dir vor, du willst jemandem eine vertrauliche Nachricht schicken – wie ein Liebesbrief
                             oder wichtige Geschäftsinformationen. Natürlich willst du, dass nur der Empfänger sie lesen
-                            kann. Genau dafür ist diese Verschlüsselung gemacht! <strong>msg</strong> ist deine App für 
-                            sichere, verschlüsselte Kommunikation – einfach zu bedienen und technisch auf dem neuesten Stand.
+                            kann. Genau dafür ist diese Verschlüsselung gemacht! <strong>msg</strong> ist deine App für
+                            sichere, verschlüsselte Kommunikation – einfach zu bedienen und technisch auf dem neuesten
+                            Stand.
                         </p>
                         <br><br>
                         <button onclick="showSection('definition', 'Was ist msg');"
@@ -111,7 +124,8 @@
                                 können.</li>
                             <li>💻 Für Entwickler, Power-User oder zum Experimentieren gibt es zusätzlich eine
                                 <strong>reine Python-Version</strong> der App, die direkt auf dem PC läuft – ideal z. B.
-                                für automatisierte Kommunikation oder Integration in eigene Projekte.</li>
+                                für automatisierte Kommunikation oder Integration in eigene Projekte.
+                            </li>
                         </ul>
 
                         <p>
@@ -226,7 +240,8 @@
                         <h4>Warum ist Fernet sicher?</h4>
                         <ul>
                             <li>✅ Nutzt moderne Verschlüsselung (AES in CBC-Modus mit 128 Bit)</li>
-                            <li>✅ Authentifizierung durch HMAC mit SHA256 – verhindert Manipulationen von Angreifern</li>
+                            <li>✅ Authentifizierung durch HMAC mit SHA256 – verhindert Manipulationen von Angreifern
+                            </li>
                             <li>✅ Einfach zu implementieren, auch ohne tiefes Kryptowissen</li>
                         </ul>
 
@@ -258,19 +273,25 @@
                             möchtest – privat oder beruflich. <br>
                             <b>Deine Daten. Deine Kontrolle. Deine Sicherheit.</b>
                             <br>
-                            Falls es dich interessiert, kannst du <a href="https://cracky.ddns.net/d/msg-encrypt/latest/" target="_blank" rel="noopener noreferrer">hier</a> msg herunterladen.
+                            Falls es dich interessiert, kannst du <a
+                                href="https://cracky.ddns.net/d/msg-encrypt/latest/" target="_blank"
+                                rel="noopener noreferrer">hier</a> msg herunterladen.
                             <br>
-                            Bitte beachte meine <a href="https://github.com/cracky22/msg_encrypt/blob/master/LICENSE.md" target="_blank">Lizenzvereinbarungen</a> 
+                            Bitte beachte meine <a href="https://github.com/cracky22/msg_encrypt/blob/master/LICENSE.md"
+                                target="_blank">Lizenzvereinbarungen</a>
                         </p>
                     </div>
 
                     <div id="imprint" class="section">
                         <br><br><br>
-                        &copy; <a href="https://cracky.ddns.net/" target="_blank">cracky></a> by <a href="https://cracky.ddns.net/about%20me" target="_blank">Martin Blieninger</a>
+                        &copy; <a href="https://cracky.ddns.net/" target="_blank">cracky></a> by <a
+                            href="https://cracky.ddns.net/about%20me" target="_blank">Martin Blieninger</a>
                         <br>
-                        Diese Website wird gehostet mit <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+                        Diese Website wird gehostet mit <a href="https://pages.github.com/" target="_blank">GitHub
+                            Pages</a>.
                         <br>
-                        Diese Website verwendet Material Design Lite von Google,<br>Lizenz: <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2.0</a>.
+                        Diese Website verwendet Material Design Lite von Google,<br>Lizenz: <a
+                            href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2.0</a>.
                     </div>
                 </center>
             </div>
