@@ -25,15 +25,19 @@
         opacity: 1;
         max-height: 500vh;
     }
+
     h4 {
         color: #007BFF;
     }
+
     .highlight {
         background-color: #e0f0ff;
         padding: 10px;
         border-left: 4px solid #007BFF;
     }
-    ul, ol {
+
+    ul,
+    ol {
         text-align: left;
     }
 </style>
@@ -45,17 +49,21 @@
                 <span class="mdl-layout-title" id="masterTitle">msg-encrypt</span>
                 <div class="mdl-layout-spacer"></div>
                 <nav class="mdl-navigation">
-                    <a id="homeIcon" class="mdl-navigation__link" style="display: none;" onclick="showSection('home', 'msg-encrypt');"><i class="material-icons">home</i></a>
+                    <a id="homeIcon" class="mdl-navigation__link" style="display: none;"
+                        onclick="showSection('home', 'msg-encrypt');"><i class="material-icons">home</i></a>
                 </nav>
             </div>
         </header>
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">Menü</span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" id="homeLink" onclick="showSection('home', 'msg-encrypt');" style="display: none;">Startseite</a>
+                <a class="mdl-navigation__link" id="homeLink" onclick="showSection('home', 'msg-encrypt');"
+                    style="display: none;">Startseite</a>
                 <a class="mdl-navigation__link" onclick="showSection('definition', 'Was ist msg');">Was ist msg?</a>
-                <a class="mdl-navigation__link" onclick="showSection('explaination', 'Funktionsweise');">Funktionsweise</a>
-                <a class="mdl-navigation__link" onclick="showSection('detailexplain', 'Erklärung im Detail');">Verschlüsselung im Detail</a>
+                <a class="mdl-navigation__link"
+                    onclick="showSection('explaination', 'Funktionsweise');">Funktionsweise</a>
+                <a class="mdl-navigation__link"
+                    onclick="showSection('detailexplain', 'Erklärung im Detail');">Verschlüsselung im Detail</a>
                 <a class="mdl-navigation__link" onclick="showSection('advantages', 'Vorteile von msg');">Vorteile</a>
             </nav>
         </div>
@@ -65,11 +73,15 @@
                     <div id="home" class="section active">
                         <h4>🔐 Sicher. Einfach. Verständlich.</h4>
                         <p>
-                            Stell dir vor, du willst jemandem eine vertrauliche Nachricht schicken – wie ein Liebesbrief oder wichtige Geschäftsinformationen. Natürlich willst du, dass nur der Empfänger sie lesen kann. Genau dafür ist diese Verschlüsselung gemacht!
+                            Stell dir vor, du willst jemandem eine vertrauliche Nachricht schicken – wie ein Liebesbrief
+                            oder wichtige Geschäftsinformationen. Natürlich willst du, dass nur der Empfänger sie lesen
+                            kann. Genau dafür ist diese Verschlüsselung gemacht!
                         </p>
 
                         <div class="highlight">
-                            <p><strong>Fernet-Verschlüsselung</strong> schützt deine Nachricht, indem sie sie in unlesbaren Zeichensalat verwandelt. Nur mit dem passenden Schlüssel kann sie wieder entschlüsselt werden.</p>
+                            <p><strong>Fernet-Verschlüsselung</strong> schützt deine Nachricht, indem sie sie in
+                                unlesbaren Zeichensalat verwandelt. Nur mit dem passenden Schlüssel kann sie wieder
+                                entschlüsselt werden.</p>
                         </div>
                     </div>
 
@@ -83,9 +95,12 @@
                         <h4>Was passiert dabei?</h4>
                         <br>
                         <ul>
-                            <li><strong>Verschlüsseln:</strong> Deine Nachricht wird mit einem geheimen Schlüssel gesichert. Außenstehende sehen nur unverständlichen Code.</li><br>
-                            <li><strong>Entschlüsseln:</strong> Nur du oder dein Empfänger mit dem richtigen Schlüssel könnt die Nachricht wieder lesbar machen.</li><br>
-                            <li><strong>Sicherheits-Check:</strong> Zusätzlich wird ein digitaler Fingerabdruck deiner Nachricht gespeichert, um Manipulationen zu erkennen.</li><br>
+                            <li><strong>Verschlüsseln:</strong> Deine Nachricht wird mit einem geheimen Schlüssel
+                                gesichert. Außenstehende sehen nur unverständlichen Code.</li><br>
+                            <li><strong>Entschlüsseln:</strong> Nur du oder dein Empfänger mit dem richtigen Schlüssel
+                                könnt die Nachricht wieder lesbar machen.</li><br>
+                            <li><strong>Sicherheits-Check:</strong> Zusätzlich wird ein digitaler Fingerabdruck deiner
+                                Nachricht gespeichert, um Manipulationen zu erkennen.</li><br>
                         </ul>
                     </div>
 
@@ -93,43 +108,49 @@
                         <h4>🔐 Wie funktioniert Fernet?</h4>
 
                         <p>
-                            Fernet ist ein Standard für die sichere, symmetrische Verschlüsselung von Nachrichten – das bedeutet: derselbe Schlüssel wird sowohl zum Verschlüsseln als auch zum Entschlüsseln verwendet.
+                            Fernet ist ein Standard für die sichere, symmetrische Verschlüsselung von Nachrichten – das
+                            bedeutet: derselbe Schlüssel wird sowohl zum Verschlüsseln als auch zum Entschlüsseln
+                            verwendet.
                         </p>
 
                         <div class="box">
-                            <strong>Wichtig:</strong> Fernet stellt sicher, dass eine Nachricht nicht nur vertraulich ist (verschlüsselt), sondern auch nicht manipuliert wurde (Authentizität durch Signatur).
+                            <strong>Wichtig:</strong> Fernet stellt sicher, dass eine Nachricht nicht nur vertraulich
+                            ist (verschlüsselt), sondern auch nicht manipuliert wurde (Authentizität durch Signatur).
                         </div>
 
                         <h4>Schritt-für-Schritt erklärt</h4>
 
                         <ol>
                             <li>
-                            <strong>Schlüssel erzeugen:</strong><br>
-                            Ein 32-Byte-Schlüssel wird zufällig erstellt – das ist dein geheimer Zugangscode.<br>
-                            <code>key&nbsp;=&nbsp;Fernet.generate_key()</code>
+                                <strong>Schlüssel erzeugen:</strong><br>
+                                Ein 32-Byte-Schlüssel wird zufällig erstellt – das ist dein geheimer Zugangscode.<br>
+                                <code>key&nbsp;=&nbsp;Fernet.generate_key()</code>
                             </li>
 
                             <li>
-                            <strong>Nachricht verschlüsseln:</strong><br>
-                            Mit dem Schlüssel wird dein Text sicher in einen sogenannten <em>Token</em> verwandelt:<br>
-                            <code>ciphertext&nbsp;=&nbsp;Fernet(key).encrypt(b"geheim")</code>
+                                <strong>Nachricht verschlüsseln:</strong><br>
+                                Mit dem Schlüssel wird dein Text sicher in einen sogenannten <em>Token</em>
+                                verwandelt:<br>
+                                <code>ciphertext&nbsp;=&nbsp;Fernet(key).encrypt(b"geheim")</code>
                             </li>
 
                             <li>
-                            <strong>Struktur des Tokens:</strong><br>
-                            Der verschlüsselte Token besteht aus mehreren Bestandteilen:
-                            <ul>
-                                <li>📅 <strong>Timestamp:</strong> Wann wurde die Nachricht verschlüsselt?</li>
-                                <li>🔐 <strong>IV:</strong> Eine zufällige Start-Nummer (Initialisierungsvektor)</li>
-                                <li>🧪 <strong>HMAC:</strong> Ein digitaler Fingerabdruck, der Manipulationen erkennt</li>
-                                <li>🧩 <strong>Der verschlüsselte Inhalt</strong></li>
-                            </ul>
+                                <strong>Struktur des Tokens:</strong><br>
+                                Der verschlüsselte Token besteht aus mehreren Bestandteilen:
+                                <ul>
+                                    <li>📅 <strong>Timestamp:</strong> Wann wurde die Nachricht verschlüsselt?</li>
+                                    <li>🔐 <strong>IV:</strong> Eine zufällige Start-Nummer (Initialisierungsvektor)
+                                    </li>
+                                    <li>🧪 <strong>HMAC:</strong> Ein digitaler Fingerabdruck, der Manipulationen
+                                        erkennt</li>
+                                    <li>🧩 <strong>Der verschlüsselte Inhalt</strong></li>
+                                </ul>
                             </li>
 
                             <li>
-                            <strong>Entschlüsselung:</strong><br>
-                            Nur mit dem gleichen Schlüssel kann der Text wieder lesbar gemacht werden:<br>
-                            <code>message = Fernet(key).decrypt(ciphertext)</code>
+                                <strong>Entschlüsselung:</strong><br>
+                                Nur mit dem gleichen Schlüssel kann der Text wieder lesbar gemacht werden:<br>
+                                <code>message = Fernet(key).decrypt(ciphertext)</code>
                             </li>
                         </ol>
 
@@ -145,7 +166,7 @@
                             Wenn du tiefer einsteigen möchtest, findest du hier die offizielle Dokumentation:
                             <br>
                             <a href="https://cryptography.io/en/latest/fernet/" target="_blank">
-                            → cryptography.io – Fernet Documentation
+                                → cryptography.io – Fernet Documentation
                             </a>
                         </p>
                     </div>
@@ -158,7 +179,8 @@
                             <li>✅ <strong>Vertraulich:</strong> Ohne Schlüssel bleibt alles geheim.</li>
                         </ul>
                         <p>
-                            <strong>Fazit:</strong> Diese Methode ist ideal, wenn du sensible Informationen übermitteln möchtest – privat oder beruflich. <br>
+                            <strong>Fazit:</strong> Diese Methode ist ideal, wenn du sensible Informationen übermitteln
+                            möchtest – privat oder beruflich. <br>
                             Deine Daten. Deine Kontrolle. Deine Sicherheit.
                         </p>
                     </div>
