@@ -297,7 +297,9 @@
                         section.style.display = "block";
                     });
                     if (id) {
-                        document.getElementById(id).style.display = "none";
+                        setTimeout(() => {
+                            document.getElementById(id).style.display = "none";
+                        }, 500);
                     }
                 }
             </script>
