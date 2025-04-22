@@ -1,42 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://cracky.ddns.net/services/apps/crackyOS/application/com.crackyOS.pyProjects/msg-encrypt/src/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon"
+        href="https://cracky.ddns.net/services/apps/crackyOS/application/com.crackyOS.pyProjects/msg-encrypt/src/img/favicon.png"
+        type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <title>msg-encrypt</title>
 </head>
+
+<style>
+    .section {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.5s ease, max-height 0.5s ease;
+    }
+
+    .section.active {
+        opacity: 1;
+        max-height: 100vh;
+    }
+</style>
+
 <body>
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">msg-encrypt</span>
-        <div class="mdl-layout-spacer"></div>
-        <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-        </nav>
-      </div>
-    </header>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Menü</span>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-      </nav>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title" id="masterTitle">msg-encrypt</span>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation">
+                    <a id="homeIcon" class="mdl-navigation__link" style="display: none;" onclick="showSection('home', 'msg-encrypt');"><i class="material-icons">home</i></a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Menü</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" id="homeLink" onclick="showSection('home', 'msg-encrypt');" style="display: none;">Startseite</a>
+                <a class="mdl-navigation__link" onclick="showSection('definition', 'Was ist msg');">Was ist msg?</a>
+                <a class="mdl-navigation__link" onclick="showSection('explaination', 'Funktionsweise');">Funktionsweise</a>
+                <a class="mdl-navigation__link" onclick="showSection('', '');">Link</a>
+                <a class="mdl-navigation__link" onclick="showSection('', '');">Link</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <center>
+                    <div id="home" class="section active">
+                        <h4>Startseite</h4>
+                        <p>irgend ein text der gar kein sinn ergibt</p>
+                    </div>
+
+                    <div id="definition" class="section">
+                        <h4>Was ist msg?</h4>
+                        <p>hi das ist ein test</p>
+                    </div>
+
+                    <div id="explaination" class="section">
+                        <h4>Erklärung</h4>
+                    </div>
+
+                    <div id="" class="section">
+
+                    </div>
+
+                    <div id="" class="section">
+
+                    </div>
+                </center>
+            </div>
+
+
+            <script>
+                function showSection(id, title) {
+                    const sections = document.querySelectorAll('.section');
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+
+                    const target = document.getElementById(id);
+                    if (target) {
+                        target.classList.add('active');
+                    }
+                    if (title) {
+                        document.getElementById("masterTitle").innerText = title;
+                    }
+                    if (id !== "home") {
+                        document.getElementById("homeIcon").style.display = "block";
+                        document.getElementById("homeLink").style.display = "block";
+                    } else {
+                        document.getElementById("homeIcon").style.display = "none";
+                        document.getElementById("homeLink").style.display = "none";
+                    }
+                }
+            </script>
+        </main>
     </div>
-    <main class="mdl-layout__content">
-      <div class="page-content">
-        
-      </div>
-    </main>
-  </div>
 </body>
+
 </html>
