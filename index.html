@@ -20,7 +20,7 @@
         opacity: 0;
         max-height: 0;
         overflow: hidden;
-        transition: opacity 0.5s ease, max-height 0.5s ease;
+        transition: opacity 0.8s ease-in, max-height 0.6s ease-out;
     }
 
     .section.active {
@@ -63,6 +63,19 @@
         background-color:rgba(177, 177, 177, 0.578);
         border-radius: 4px;
         height: 10px;
+    }
+    div.msgLogo {
+        margin-top: 45px;
+        height: 200px;
+        width: 200px;
+        background-color: #9ee5bc;
+        border-radius: 35px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    img.logo {
+        margin-top: 5px;
+        height: 190px;
+        width: 190px;
     }
 </style>
 
@@ -293,18 +306,34 @@
                             Bitte beachte meine <a href="https://github.com/cracky22/msg_encrypt/blob/master/LICENSE.md"
                                 target="_blank">Lizenzvereinbarungen</a>
                         </p>
+                        <br><br>
+                        <button onclick="showSection('home', 'msg-encrypt');"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                            zur Startseite
+                        </button>
+                        <br>
+                        <a onclick="showSection('imprint', 'Impressum');" style="text-decoration: none;">Impressum</a>
                     </div>
 
                     <div id="imprint" class="section">
                         <br><br><br>
-                        &copy; <a href="https://cracky.ddns.net/" target="_blank">cracky></a> by <a
+                        <div class="msgLogo">
+                            <img class="logo" src="https://cracky.ddns.net/services/apps/crackyOS/application/com.crackyOS.pyProjects/msg-encrypt/android.app/icon.png">
+                        </div>
+                        <br><br>
+                        &copy; <a href="https://cracky.ddns.net/" target="_blank" style="color: black; text-decoration: none;">cracky></a> by <a
                             href="https://cracky.ddns.net/about%20me" target="_blank">Martin Blieninger</a>
                         <br>
-                        Diese Website wird gehostet mit <a href="https://pages.github.com/" target="_blank">GitHub
+                        Diese Website wird gehostet mit <a href="https://pages.github.com/" target="_blank" style="color: #08872B;">GitHub
                             Pages</a>.
                         <br>
                         Diese Website verwendet Material Design Lite von Google,<br>Lizenz: <a
-                            href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2.0</a>.
+                            href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" style="color: #9E2165;">Apache 2.0</a>.
+                        <br><br>
+                        <button onclick="showSection('home', 'msg-encrypt');"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                            zur Startseite
+                        </button>
                     </div>
                 </center>
             </div>
