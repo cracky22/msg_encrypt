@@ -9,6 +9,9 @@
         type="image/x-icon">
     <meta content="Wie funktioniert die einfach Textverschlüsselung über msg und was steckt dahinter" name="description">
     <meta content="https://cracky.ddns.net/services/internal/msg.web/src/img/favicon.png" itemprop="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-blue.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -16,6 +19,10 @@
 </head>
 
 <style>
+    body {
+        font-family: "Rubik", sans-serif;
+    }
+
     .section {
         opacity: 0;
         max-height: 0;
@@ -29,16 +36,19 @@
     }
 
     h4 {
-        color: #007BFF;
+        background: linear-gradient(45deg, #759f70, #329187);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         font-weight: 550;
     }
 
     .highlight {
         background-color: #e0f0ff;
         padding: 10px;
-        border-left: 4px solid #007BFF;
+        border-left: 4px solid #416b3c;
         border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(145deg, #b1ffd1, #a3fff6, #b3ffab);
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -52,11 +62,15 @@
     .mdl-button {
         border-radius: 20px;
         margin-bottom: 40px;
+        user-select: none;
     }
 
     .mdl-button:hover, .mdl-button:active {
         box-shadow: none;
         transition: 0.2s linear;
+        background-color: #16645c!important;
+        /*background: linear-gradient(145deg, #66c58d, #5bb053);*/
+        color: rgb(255, 230, 128);
     }
 
     ul,
@@ -73,7 +87,7 @@
         margin-top: 45px;
         height: 200px;
         width: 200px;
-        background-color: #9ee5bc;
+        background: linear-gradient(145deg, #9ee5bc, #05aa9a, #4e8248);
         border-radius: 35px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
@@ -124,8 +138,8 @@
                         <h4>🔐 Sicher. Einfach. Verständlich.</h4>
                         <p style="text-align: justify;">
                             Stell dir vor, du willst jemandem eine vertrauliche Nachricht schicken – wie ein Liebesbrief
-                            oder wichtige Geschäftsinformationen. Natürlich willst du, dass nur der Empfänger sie lesen
-                            kann. Genau dafür ist diese Verschlüsselung gemacht! <strong>msg</strong> ist deine App für
+                            oder wichtige Geschäfts Informationen. Natürlich willst du, dass nur der Empfänger sie lesen
+                            kann. Genau dafür ist diese Verschlüsselung gemacht!<br><br><strong>msg</strong> ist deine App für
                             sichere, verschlüsselte Kommunikation – einfach zu bedienen und technisch auf dem neuesten
                             Stand.
                         </p>
@@ -137,7 +151,7 @@
                     </div>
 
                     <div id="definition" class="section" style="max-width: 80%;">
-                        <h4>📱 msg – Sicher. Schnell. Verschlüsselt.</h4>
+                        <h4>💡 msg – Sicher. Schnell. Verschlüsselt.</h4>
 
                         <div class="highlight">
                             <p>
