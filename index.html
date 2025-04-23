@@ -462,12 +462,14 @@
                     clickCount++;
 
                     if (clickCount < 3) {
+                        navigator.vibrate(80);
                         img.classList.remove('spin-once');
                         void img.offsetWidth;
                         img.classList.add('spin-once');
                     }
 
                     if (clickCount === 3) {
+                        navigator.vibrate(200, 80, 80, 80);
                         showSection('secret', "Geheimes Menü");
                         clickCount = 0;
                     }
