@@ -150,7 +150,9 @@
                 <div class="mdl-layout-spacer"></div>
                 <nav class="mdl-navigation">
                     <a id="homeIcon" class="mdl-navigation__link" style="display: none;"
-                        onclick="showSection('home', 'msg-encrypt');"><i class="material-icons">home</i></a>
+                        onclick="showSection('home', 'msg-encrypt'); navigator.vibrate(20);">
+                        <i class="material-icons">home</i>
+                    </a>
                 </nav>
             </div>
         </header>
@@ -180,8 +182,8 @@
             <div class="page-content">
                 <center>
                     <div id="home" class="section active" style="max-width: 80%;">
-                        <h4>🔐 Sicher. Einfach. Verständlich. msg!</h4>
-                        <div class="msgLogo" style="user-select: none; pointer-events: none; transform: scale(0.7); margin-top: 5px!important;">
+                        <h4>🔐 Sicher. Einfach. Verständlich. <b>msg</b>!</h4>
+                        <div class="msgLogo" style="user-select: none; pointer-events: none; transform: scale(0.6); margin-top: -30px!important;">
                             <img class="logo" loading="lazy"
                                 src="https://cracky.ddns.net/services/apps/crackyOS/application/com.crackyOS.pyProjects/msg-encrypt/android.app/icon.png">
                         </div>
@@ -194,7 +196,7 @@
                             Stand.
                         </p>
                         <br><br>
-                        <button onclick="showSection('definition', 'Was ist msg'); hideLink('definitionLink');"
+                        <button onclick="showSection('definition', 'Was ist msg'); hideLink('definitionLink'); navigator.vibrate(20);"
                             type="button" class="mdl-button mdl-button--raised mdl-button--colored ">
                             →&nbsp;&nbsp;entdecke msg
                         </button>
@@ -225,7 +227,7 @@
                         <p>Egal ob mobil (Android) oder desktop (Python): <strong>msg</strong> gibt dir volle Kontrolle
                             über deine Daten – sicher und privat.</p>
                         <br><br>
-                        <button onclick="showSection('example', 'Beispiel'); hideLink('exampleLink');" type="button"
+                        <button onclick="showSection('example', 'Beispiel'); hideLink('exampleLink'); navigator.vibrate(20);" type="button"
                             class="mdl-button mdl-button--raised mdl-button--colored ">
                             ein Beispiel dafür
                         </button>
@@ -254,7 +256,7 @@
                                 entschlüsselt werden.</p>
                         </div>
                         <br><br>
-                        <button onclick="showSection('explaination', 'Funktionsweise'); hideLink('explainationLink');"
+                        <button onclick="showSection('explaination', 'Funktionsweise'); hideLink('explainationLink'); navigator.vibrate(20);"
                             type="button" class="mdl-button mdl-button--raised mdl-button--colored ">
                             Funktionsweise
                         </button>
@@ -274,7 +276,7 @@
                         </ul>
                         <br><br>
                         <button
-                            onclick="showSection('detailexplain', 'Erklärung im Detail'); hideLink('detailexplainLink');"
+                            onclick="showSection('detailexplain', 'Erklärung im Detail'); hideLink('detailexplainLink'); navigator.vibrate(20);"
                             type="button" class="mdl-button mdl-button--raised mdl-button--colored ">
                             zur detaillierten Erklärung
                         </button>
@@ -337,7 +339,7 @@
                             </a><br><small>(externer Link)</small>
                         </p>
                         <br><br>
-                        <button onclick="showSection('advantages', 'Vorteile'); hideLink('advantagesLink');"
+                        <button onclick="showSection('advantages', 'Vorteile'); hideLink('advantagesLink'); navigator.vibrate(20);"
                             type="button" class="mdl-button mdl-button--raised mdl-button--colored ">
                             Vorteile
                         </button>
@@ -364,7 +366,7 @@
                                 target="_blank">Lizenzvereinbarungen</a>
                         </p>
                         <br><br>
-                        <button onclick="showSection('home', 'msg-encrypt');" type="button"
+                        <button onclick="showSection('home', 'msg-encrypt'); navigator.vibrate(20);" type="button"
                             class="mdl-button mdl-button--raised mdl-button--colored ">
                             zur Startseite
                         </button>
@@ -470,6 +472,15 @@
 
                     if (clickCount === 3) {
                         navigator.vibrate(300);
+                        setTimeout(() => {
+                            navigator.vibrate(50);
+                            setTimeout(() => {
+                                navigator.vibrate(50);
+                                setTimeout(() => {
+                                    navigator.vibrate(100);
+                                }, 100);
+                            }, 100);
+                        }, 100);
                         document.getElementById("imprintLink").style.display = "block";
                         showSection('secret', "Geheimes Menü");
                         clickCount = 0;
