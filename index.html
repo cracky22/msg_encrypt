@@ -30,6 +30,7 @@
 
     h4 {
         color: #007BFF;
+        font-weight: 550;
     }
 
     .highlight {
@@ -37,6 +38,9 @@
         padding: 10px;
         border-left: 4px solid #007BFF;
         border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .mdl-layout-title,
@@ -53,6 +57,12 @@
     ul,
     ol {
         text-align: left;
+    }
+
+    code {
+        background-color:rgba(177, 177, 177, 0.578);
+        border-radius: 4px;
+        height: 10px;
     }
 </style>
 
@@ -212,14 +222,14 @@
                                 Ein 32-Byte-Schlüssel wird zufällig erstellt – das ist dein geheimer Zugangscode.<br>
                                 <code>key&nbsp;=&nbsp;Fernet.generate_key()</code>
                             </li>
-
+                            <br>                                    
                             <li>
                                 <strong>Nachricht verschlüsseln:</strong><br>
                                 Mit dem Schlüssel wird dein Text sicher in einen sogenannten <em>Token</em>
                                 verwandelt:<br>
-                                <code>ciphertext&nbsp;=&nbsp;Fernet(key).encrypt(b"geheim")</code>
+                                <code>ciphertext = Fernet(key).encrypt(b"geheim")</code>
                             </li>
-
+                            <br>                                
                             <li>
                                 <strong>Struktur des Tokens:</strong><br>
                                 Der verschlüsselte Token besteht aus mehreren Bestandteilen:
@@ -232,7 +242,7 @@
                                     <li>🧩 <strong>Der verschlüsselte Inhalt</strong></li>
                                 </ul>
                             </li>
-
+                            <br>                                
                             <li>
                                 <strong>Entschlüsselung:</strong><br>
                                 Nur mit dem gleichen Schlüssel kann der Text wieder lesbar gemacht werden:<br>
@@ -248,12 +258,12 @@
                             <li>✅ Einfach zu implementieren, auch ohne tiefes Kryptowissen</li>
                         </ul>
 
-                        <h4>Mehr Infos für Technikinteressierte</h4>
+                        <h4>Mehr Infos für<br>Technikinteressierte</h4>
                         <p>
                             Wenn du tiefer einsteigen möchtest, findest du hier die offizielle Dokumentation:
                             <br>
-                            <a href="https://cryptography.io/en/latest/fernet/" target="_blank">
-                                → cryptography.io – Fernet Documentation
+                            → <a href="https://cryptography.io/en/latest/fernet/" target="_blank">
+                                cryptography.io – Fernet Documentation
                             </a><br><small>(externer Link)</small>
                         </p>
                         <br><br>
