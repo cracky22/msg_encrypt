@@ -98,6 +98,22 @@
         height: 190px;
         width: 190px;
     }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg) scale(1);
+        }
+        20% {
+            transform: rotate(20deg) scale(1.05);
+        }
+        100% {
+            transform: rotate(360deg) scale(1);
+        }
+    }
+
+    .spin-once {
+        animation: spin 0.7s ease-in-out;
+    }
 </style>
 
 <body>
@@ -338,8 +354,8 @@
 
                     <div id="imprint" class="section">
                         <br><br><br>
-                        <div class="msgLogo">
-                            <img class="logo" loading="lazy" 
+                        <div class="msgLogo" id="msgLogo">
+                            <img class="logo" id="logo" loading="lazy" 
                                 src="https://cracky.ddns.net/services/apps/crackyOS/application/com.crackyOS.pyProjects/msg-encrypt/android.app/icon.png">
                         </div>
                         <br><br>
@@ -351,6 +367,15 @@
                         <br>
                         Diese Website verwendet Material Design Lite von Google,<br>Lizenz: <a
                             href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" style="color: #9E2165;">Apache 2.0</a>.
+                        <br><br>
+                        <button onclick="showSection('home', 'msg-encrypt');" type="button"
+                            class="mdl-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                            zur Startseite
+                        </button>
+                    </div>
+
+                    <div id="secret" class="section">
+
                         <br><br>
                         <button onclick="showSection('home', 'msg-encrypt');" type="button"
                             class="mdl-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
@@ -397,6 +422,24 @@
                         }, 500);
                     }
                 }
+
+                let clickCount = 0;
+                const img = document.getElementById('msgLogo');
+
+                img.addEventListener('click', () => {
+                    clickCount++;
+
+                    if (clickCount < 3) {
+                        img.classList.remove('spin-once');
+                        void img.offsetWidth; 
+                        img.classList.add('spin-once');
+                    }
+
+                    if (clickCount === 3) {
+                        showSection('secret', "Geheimes Menü");
+                        clickCount = 0;
+                    }
+                });
             </script>
         </main>
     </div>
