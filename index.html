@@ -131,22 +131,13 @@
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">Menü</span>
             <nav class="mdl-navigation">
-                <a class="mdnavlink mdl-navigation__link" id="homeLink" onclick="showSection('home', 'msg-encrypt');"
-                    style="display: none;">Startseite</a>
-                <a class="mdnavlink mdl-navigation__link" id="element1"
-                    onclick="showSection('definition', 'Was ist msg');hideLink('element1');">Was ist msg?</a>
-                <a class="mdnavlink mdl-navigation__link" id="element2"
-                    onclick="showSection('explaination', 'Funktionsweise');hideLink('element2');">Funktionsweise von
-                    msg</a>
-                <a class="mdnavlink mdl-navigation__link" id="element3"
-                    onclick="showSection('example', 'Beispiel');hideLink('element3');">Verschlüsselung Beispiel</a>
-                <a class="mdnavlink mdl-navigation__link" id="element4"
-                    onclick="showSection('detailexplain', 'Erklärung im Detail');hideLink('element4');">Verschlüsselung
-                    im Detail</a>
-                <a class="mdnavlink mdl-navigation__link" id="element5"
-                    onclick="showSection('advantages', 'Vorteile von msg');hideLink('element5');">Vorteile von msg</a>
-                <a class="mdnavlink mdl-navigation__link" id="element6"
-                    onclick="showSection('imprint', 'Impressum');hideLink('element6');">Impressum</a>
+                <a class="mdnavlink mdl-navigation__link" id="homeLink" onclick="showSection('home', 'msg-encrypt');" style="display: none;">Startseite</a>
+                <a class="mdnavlink mdl-navigation__link" id="definitionLink" onclick="showSection('definition', 'Was ist msg'); hideLink('definitionLink');">Was ist msg?</a>
+                <a class="mdnavlink mdl-navigation__link" id="exampleLink" onclick="showSection('example', 'Beispiel'); hideLink('exampleLink');">Verschlüsselung Beispiel</a>
+                <a class="mdnavlink mdl-navigation__link" id="explainationLink" onclick="showSection('explaination', 'Funktionsweise'); hideLink('explainationLink');">Funktionsweise von msg</a>
+                <a class="mdnavlink mdl-navigation__link" id="detailexplainLink" onclick="showSection('detailexplain', 'Erklärung im Detail'); hideLink('detailexplainLink');">Verschlüsselung im Detail</a>
+                <a class="mdnavlink mdl-navigation__link" id="advantagesLink" onclick="showSection('advantages', 'Vorteile von msg'); hideLink('advantagesLink');">Vorteile von msg</a>
+                <a class="mdnavlink mdl-navigation__link" id="imprintLink" onclick="showSection('imprint', 'Impressum'); hideLink('imprintLink');">Impressum</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
@@ -154,15 +145,15 @@
                 <center>
                     <div id="home" class="section active" style="max-width: 80%;">
                         <h4>🔐 Sicher. Einfach. Verständlich.</h4>
-                        <p style="text-align: justify;">
-                            Stell dir vor, du willst jemandem eine vertrauliche Nachricht schicken – wie ein Liebesbrief
-                            oder wichtige Geschäfts Informationen. Natürlich willst du, dass nur der Empfänger sie lesen
-                            kann. Genau dafür ist diese Verschlüsselung gemacht!<br><br><strong>msg</strong> ist deine App für
+                        <br>
+                        <p style="text-align: justify!important;">
+                            Stell dir vor, du willst jemandem eine vertrauliche Nachricht schicken. Natürlich willst du, dass nur der Empfänger sie lesen
+                            kann. Genau dafür ist diese Verschlüsselung gemacht!<br><hr><strong>msg</strong> ist deine App für
                             sichere, verschlüsselte Kommunikation – einfach zu bedienen und technisch auf dem neuesten
                             Stand.
                         </p>
                         <br><br>
-                        <button onclick="showSection('definition', 'Was ist msg');" type="button"
+                        <button onclick="showSection('definition', 'Was ist msg'); hideLink('definitionLink');" type="button"
                             class="mdl-button mdl-button--raised mdl-button--colored ">
                             →&nbsp;&nbsp;entdecke msg
                         </button>
@@ -170,33 +161,30 @@
 
                     <div id="definition" class="section" style="max-width: 80%;">
                         <h4>💡 msg – Sicher. Schnell. Verschlüsselt.</h4>
-
                         <div class="highlight">
                             <p>
                                 Die App nutzt die bewährte <strong>Fernet-Verschlüsselung</strong>, um deine Nachrichten
                                 zu schützen – das heißt: Nur du und der Empfänger können lesen, was geschrieben wurde.
                             </p>
                         </div>
-
                         <h4>So funktioniert msg:</h4>
                         <ul>
                             <li>📲 Es gibt eine <strong>Android-App</strong>, mit der du bequem unterwegs Nachrichten
-                                senden und empfangen kannst.</li>
+                                senden und empfangen kannst.</li><hr>
                             <li>🧠 Im Hintergrund läuft ein <strong>Python-Server</strong>, der die Kommunikation
                                 zwischen den Geräten sichert und verarbeitet – natürlich ohne selbst Inhalte lesen zu
-                                können.</li>
+                                können.</li><hr>
                             <li>💻 Für Entwickler, Power-User oder zum Experimentieren gibt es zusätzlich eine
                                 <strong>reine Python-Version</strong> der App, die direkt auf dem PC läuft – ideal z. B.
                                 für automatisierte Kommunikation oder Integration in eigene Projekte.
-                            </li>
+                            </li><hr>
                         </ul>
-
                         <p>
                             Egal ob mobil (Android) oder desktop (Python): <strong>msg</strong> gibt dir volle Kontrolle über deine
                             Daten – sicher und privat.
                         </p>
                         <br><br>
-                        <button onclick="showSection('example', 'Beispiel');" type="button"
+                        <button onclick="showSection('example', 'Beispiel'); hideLink('exampleLink');" type="button"
                             class="mdl-button mdl-button--raised mdl-button--colored ">
                             ein Beispiel dafür
                         </button>
@@ -225,7 +213,7 @@
                                 entschlüsselt werden.</p>
                         </div>
                         <br><br>
-                        <button onclick="showSection('explaination', 'Funktionsweise');" type="button"
+                        <button onclick="showSection('explaination', 'Funktionsweise'); hideLink('explainationLink');" type="button"
                             class="mdl-button mdl-button--raised mdl-button--colored ">
                             Funktionsweise
                         </button>
@@ -244,7 +232,7 @@
                                 Nachricht gespeichert, um Manipulationen zu erkennen.</li><br>
                         </ul>
                         <br><br>
-                        <button onclick="showSection('detailexplain', 'Erklärung im Detail');" type="button"
+                        <button onclick="showSection('detailexplain', 'Erklärung im Detail'); hideLink('detailexplainLink');" type="button"
                             class="mdl-button mdl-button--raised mdl-button--colored ">
                             zur detaillierten Erklärung
                         </button>
@@ -252,20 +240,16 @@
 
                     <div id="detailexplain" class="section">
                         <h4>🔐 Wie funktioniert Fernet?</h4>
-
                         <p>
                             Fernet ist ein Standard für die sichere, symmetrische Verschlüsselung von Nachrichten – das
                             bedeutet: derselbe Schlüssel wird sowohl zum Verschlüsseln als auch zum Entschlüsseln
                             verwendet.
                         </p>
-
                         <div class="box">
                             <strong>Wichtig:</strong> Fernet stellt sicher, dass eine Nachricht nicht nur vertraulich
                             ist (verschlüsselt), sondern auch nicht manipuliert wurde (Authentizität durch Signatur).
                         </div>
-
                         <h4>Schritt-für-Schritt erklärt</h4>
-
                         <ol>
                             <li>
                                 <strong>Schlüssel erzeugen:</strong><br>
@@ -299,7 +283,6 @@
                                 <code>message = Fernet(key).decrypt(ciphertext)</code>
                             </li>
                         </ol>
-
                         <h4>Warum ist Fernet sicher?</h4>
                         <ul>
                             <li>✅ Nutzt moderne Verschlüsselung (AES in CBC-Modus mit 128 Bit)</li>
@@ -307,7 +290,6 @@
                             </li>
                             <li>✅ Einfach zu implementieren, auch ohne tiefes Kryptowissen</li>
                         </ul>
-
                         <h4>Mehr Infos für<br>Technikinteressierte</h4>
                         <p>
                             Wenn du tiefer einsteigen möchtest, findest du hier die offizielle Dokumentation:
@@ -317,7 +299,7 @@
                             </a><br><small>(externer Link)</small>
                         </p>
                         <br><br>
-                        <button onclick="showSection('advantages', 'Vorteile');" type="button"
+                        <button onclick="showSection('advantages', 'Vorteile'); hideLink('advantagesLink');" type="button"
                             class="mdl-button mdl-button--raised mdl-button--colored ">
                             Vorteile
                         </button>
@@ -349,7 +331,7 @@
                             zur Startseite
                         </button>
                         <br>
-                        <a onclick="showSection('imprint', 'Impressum');" style="text-decoration: none;">Impressum</a>
+                        <a onclick="showSection('imprint', 'Impressum'); hideLink('imprintLink');" style="text-decoration: none;">Impressum</a>
                     </div>
 
                     <div id="imprint" class="section">
@@ -368,7 +350,7 @@
                         Diese Website verwendet Material Design Lite von Google,<br>Lizenz: <a
                             href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" style="color: #9E2165;">Apache 2.0</a>.
                         <br><br>
-                        <button onclick="showSection('home', 'msg-encrypt');" type="button"
+                        <button onclick="showSection('home', 'msg-encrypt'); hideLink('homeLink');" type="button"
                             class="mdl-button mdl-button--raised mdl-button--colored ">
                             zur Startseite
                         </button>
@@ -389,6 +371,7 @@
 
             <script>
                 function showSection(id, title) {
+                    console.log(`showSection(id=[${id}], title=[${title}]);`);
                     const sections = document.querySelectorAll('.section');
                     sections.forEach(section => {
                         section.classList.remove('active');
@@ -417,6 +400,7 @@
                     }
                 }
                 function hideLink(id) {
+                    console.log(`hideLink(id=[${id}]);`);
                     const sections = document.querySelectorAll('.mdnavlink');
                     sections.forEach(section => {
                         section.style.display = "block";
