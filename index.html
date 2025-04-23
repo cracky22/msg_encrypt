@@ -469,7 +469,8 @@
                     }
 
                     if (clickCount === 3) {
-                        navigator.vibrate(200, 80, 80, 80);
+                        navigator.vibrate(300);
+                        document.getElementById("imprintLink").style.display = "block";
                         showSection('secret', "Geheimes Menü");
                         clickCount = 0;
                     }
