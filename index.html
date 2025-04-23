@@ -99,6 +99,15 @@
         height: 10px;
     }
 
+
+    .imprintBtnLink {
+        text-decoration: none;
+        user-select: none;
+    }
+    .imprintBtnLink:active, .imprintBtnLink:hover {
+        text-decoration: underline!important;
+    }
+
     div.msgLogo {
         margin-top: 45px;
         height: 200px;
@@ -171,7 +180,11 @@
             <div class="page-content">
                 <center>
                     <div id="home" class="section active" style="max-width: 80%;">
-                        <h4>🔐 Sicher. Einfach. Verständlich.</h4>
+                        <h4>🔐 Sicher. Einfach. Verständlich. msg!</h4>
+                        <div class="msgLogo" style="user-select: none; pointer-events: none;">
+                            <img class="logo" loading="lazy"
+                                src="https://cracky.ddns.net/services/apps/crackyOS/application/com.crackyOS.pyProjects/msg-encrypt/android.app/icon.png">
+                        </div>
                         <br>
                         <p style="text-align: justify!important;">
                             Stell dir vor, du willst jemandem eine vertrauliche Nachricht schicken. Natürlich willst du,
@@ -269,7 +282,7 @@
                     </div>
 
                     <div id="detailexplain" class="section">
-                        <h4>🔐 Wie funktioniert Fernet?</h4>
+                        <h4>🔐 Wie funktioniert <b>Fernet</b>?</h4>
                         <p>Fernet ist ein Standard für die sichere, symmetrische Verschlüsselung von Nachrichten – das
                             bedeutet: derselbe Schlüssel wird sowohl zum Verschlüsseln als auch zum Entschlüsseln
                             verwendet.</p>
@@ -309,7 +322,7 @@
                                 <code>message = Fernet(key).decrypt(ciphertext)</code>
                             </li>
                         </ol>
-                        <h4>Warum ist Fernet sicher?</h4>
+                        <h4>Warum ist <b>Fernet</b> sicher?</h4>
                         <ul>
                             <li>✅ Nutzt moderne Verschlüsselung (AES in CBC-Modus mit 128 Bit)</li>
                             <li>✅ Authentifizierung durch HMAC mit SHA256 – verhindert Manipulationen von Angreifern
@@ -317,7 +330,7 @@
                             <li>✅ Einfach zu implementieren, auch ohne tiefes Kryptowissen</li>
                         </ul>
                         <h4>Mehr Infos für<br>Technikinteressierte</h4>
-                        <p>
+                        <p style="max-width: 80%;">
                             Wenn du tiefer einsteigen möchtest, findest du hier die offizielle Dokumentation:
                             <br>
                             → <a href="https://cryptography.io/en/latest/fernet/" target="_blank">
@@ -358,7 +371,7 @@
                         </button>
                         <br>
                         <a onclick="showSection('imprint', 'Impressum'); hideLink('imprintLink');"
-                            style="text-decoration: none;">Impressum</a>
+                            clss="imprintBtnLink">Impressum</a>
                     </div>
 
                     <div id="imprint" class="section">
