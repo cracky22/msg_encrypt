@@ -404,12 +404,16 @@
                         }, 400);
                     }
                     if (id !== "home") {
-                        document.getElementById("homeIcon").style.display = "block";
-                        document.getElementById("homeLink").style.display = "block";
+                        setTimeout(() => {
+                            document.getElementById("homeIcon").style.display = "block";
+                            document.getElementById("homeLink").style.display = "block";
+                        }, 400);
                     } else {
-                        document.getElementById("homeIcon").style.display = "none";
-                        document.getElementById("homeLink").style.display = "none";
+                        setTimeout(() => {
+                            document.getElementById("homeIcon").style.display = "none";
+                            document.getElementById("homeLink").style.display = "none";
                         document.getElementById("masterTitle").innerText = "msg-encrypt";
+                        }, 400);
                     }
                 }
                 function hideLink(id) {
