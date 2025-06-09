@@ -27,6 +27,9 @@ Im Debugmodus wird sich msg-encrypt beim bearbeiten des Source-Codes nicht selbs
 
 [Der Fehler: `['validate_hash']: HASH INVALID!` kann beim Entwickeln auftreten, da die Entwicklerversion nicht derselben Prüfsumme wie der des letzten Releases entspricht (durch kurzfristige Änderungen)].
 
+# Feedback an Entwickler
+Das Feedback an Entwickler erfolgt über GitHub. Insbesondere die Android-Applikation verfügt seit Version v6.1.2 über eine Feedbackmöglichkeit in der App direkt. Diese Schnittstelle ist über msgserver an GitHub Issues angebunden und ermöglicht das automatisierte Erstellen von Issues.
+
 ## Versioncontrol / Versionsnummern
 Aktuelle Versions-Tags sind dev-beta (Developer-Beta), Public-Beta und Stable. Die Stable wird in Zukunft verfügbar sein. Die unterschiedlichen Builds stehen für neue Features / kleine Änderungen die noch mit in der Version getestet werden sollen. Build updates werden nicht auf meiner Webseite zur Verfügung stehen, da sie meistens nur Entwickler-Tests beinhalten. Große Versionen (releases) werden sowohl auf dem öffentlichen GitHub Account als auch auf meiner Webseite verfügbar sein.
 
