@@ -78,15 +78,19 @@
 
         .section {
             position: relative;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 80px 20px;
+            min-height: calc(100vh - 160px); /* Adjusted to account for header and padding */
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .section:last-child {
+            margin-bottom: 0; /* Ensure no extra margin at the end */
         }
 
         .section.visible {
@@ -196,6 +200,10 @@
 
             .logo-text {
                 font-size: 20px;
+            }
+
+            .section {
+                min-height: calc(100vh - 120px); /* Adjusted for smaller screens */
             }
         }
     </style>
