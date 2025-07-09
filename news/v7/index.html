@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://cracky.ddns.net/services/apps/crackyOS/application/com.crackyOS.pyProjects/msg-encrypt/src/img/favicon.png" type="image/x-icon">
+    <meta content="Welche Neuigkeiten gibt es in msg v7.0.0" name="description">
+    <meta content="https://cracky.ddns.net/services/internal/msg.web/src/img/favicon.png" itemprop="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+    <title>Neues in msg</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Varela Round", sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(0, 255, 255, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+            z-index: -1;
+            transform: translateZ(-1px) scale(1.5);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform: perspective(1000px);
+            transition: transform 0.5s ease;
+        }
+
+        .card h2 {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(45deg, #0ff, #f0f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            font-size: 18px;
+            color: #ccc;
+            text-align: justify;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .card ul li {
+            font-size: 18px;
+            color: #ccc;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: "•";
+            color: #0ff;
+            position: absolute;
+            left: -20px;
+        }
+
+        .logo-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+            transform: perspective(1000px) rotateY(0deg);
+            transition: transform 0.5s ease;
+        }
+
+        .imprint-link {
+            color: #0ff;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .imprint-link:hover {
+            color: #f0f;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .card h2 {
+                font-size: 32px;
+            }
+
+            .card p, .card ul li {
+                font-size: 16px;
+            }
+
+            header {
+                padding: 15px 20px;
+            }
+
+            .logo-text {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="logo-container">
+            <img src="https://cracky.ddns.net/services/apps/crackyOS/application/com.crackyOS.pyProjects/msg-encrypt/android.app/icon.png" alt="msg Logo">
+            <span class="logo-text">msg-encrypt</span>
+        </div>
+        <nav>
+            <a href="#imprint" class="imprint-link">Impressum</a>
+        </nav>
+    </header>
+
+    <section id="home" class="section">
+        <div class="parallax-bg"></div>
+        <div class="card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+            <div class="logo-card">
+                <img src="https://cracky.ddns.net/services/apps/crackyOS/application/com.crackyOS.pyProjects/msg-encrypt/android.app/icon.png" alt="msg Logo">
+            </div>
+            <h2>msg v7.0.0</h2>
+            <p>
+                Willkommen zu <strong>msg v7.0.0</strong> – der neuen Version der App für sichere, schnelle und verschlüsselte Nachrichten! Entdecke alle neuen Funktionen und Verbesserungen, die deine Kommunikation noch sicherer gestalten.
+            </p>
+        </div>
+    </section>
+
+    <section id="chg1" class="section">
+        <div class="parallax-bg"></div>
+        <div class="card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+            <h2>Public-Key-Infrastructure</h2>
+            <p>
+                Die <b>Public-Key-Infrastruktur</b> (PKI) ist ein System zur Verwaltung von digitalen Zertifikaten und Schlüsseln. Sie ermöglicht sicherere Kommunikation und Authentifizierung in digitalen Netzwerken. msg nutzt PKI, um Nachrichten sicher zu verschlüsseln und zu signieren. Jeder Benutzer hat ein Schlüsselpaar: einen privaten Schlüssel, der geheim bleibt, und einen öffentlichen Schlüssel, der mit anderen geteilt wird. Wenn du eine Nachricht sendest, wird sie mit dem öffentlichen Schlüssel des Empfängers verschlüsselt. Nur der Empfänger kann sie mit seinem privaten Schlüssel entschlüsseln. Zusätzlich signiert der Absender die Nachricht mit seinem privaten Schlüssel, um sicherzustellen, dass die Nachricht tatsächlich vom Absender stammt und nicht verändert wurde.
+            </p>
+        </div>
+    </section>
+
+    <section id="chg2" class="section">
+        <div class="parallax-bg"></div>
+        <div class="card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+            <h2>Kontakte</h2>
+            <p>
+                msg v7.0.0 führt eine Kontaktverwaltung ein, die es Benutzern ermöglicht, Nachrichten einfach mit den öffentlichen Schlüsseln ihrer Kontakte zu verschlüsseln. Alle Kontakte werden automatisch hinzugefügt, bearbeitet und gelöscht. Jeder Kontakt kann einen öffentlichen Schlüssel haben, der für die Verschlüsselung von Nachrichten verwendet wird. Zur Personalisierung kannst du jeden beliebigen Kontakt als Favorit markieren. Favorisierte Kontakte werden in der Kontaktliste hervorgehoben und können schneller ausgewählt werden.
+            </p>
+        </div>
+    </section>
+
+    <section id="chg3" class="section">
+        <div class="parallax-bg"></div>
+        <div class="card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+            <h2>Kleinere Neuigkeiten</h2>
+            <p>
+                msg v7.0.0 bringt eine Reihe von neuen Funktionen und Verbesserungen mit sich, die die Benutzererfahrung verbessern und die Sicherheit erhöhen:
+            </p>
+            <ul>
+                <li>Verbesserte grafische Benutzeroberfläche für eine intuitivere Bedienung</li>
+                <li>Optimale Anzeige von längeren Nachrichten zur besseren Lesbarkeit</li>
+                <li>Optimierte Leistung für schnellere und zuverlässigere Verschlüsselung</li>
+                <li>Erweiterte Sicherheitsfunktionen, einschließlich verbesserter Verschlüsselungsalgorithmus</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="download" class="section">
+        <div class="parallax-bg"></div>
+        <div class="card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+            <h2>Downloade msg</h2>
+            <p>
+                msg ist eine Android-App, die auf GitHub bereitgestellt wird. Du kannst die neueste Version von msg direkt von der <a href="https://github.com/cracky22/msg_encrypt/releases/tag/7.0.0" target="_blank" rel="noopener noreferrer" style="color: #0ff;">GitHub-Seite</a> herunterladen. Der v7.0.0 Release wird voraussichtlich am 17.07.2025 veröffentlicht. <i style="color: #f66; font-family: monospace;">Es empfiehlt sich nicht, den Entwickler (PRE) Release zu verwenden, da dieser nicht für den produktiven Einsatz gedacht ist und Fehler enthalten kann.</i>
+            </p>
+        </div>
+    </section>
+
+    <section id="imprint" class="section">
+        <div class="parallax-bg"></div>
+        <div class="card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+            <div class="logo-card">
+                <img src="https://cracky.ddns.net/services/apps/crackyOS/application/com.crackyOS.pyProjects/msg-encrypt/android.app/icon.png" alt="msg Logo">
+            </div>
+            <h2>Impressum</h2>
+            <p>
+                © <a href="https://cracky.ddns.net/" target="_blank" style="color: #0ff; text-decoration: none;">cracky></a> by <a href="https://cracky.ddns.net/about%20me" target="_blank" style="color: #0ff; text-decoration: none;">Martin Blieninger</a><br>
+                Diese Website wird gehostet mit <a href="https://pages.github.com/" target="_blank" style="color: #0ff; text-decoration: none;">GitHub Pages</a>.<br>
+                Diese Website verwendet Material Design Lite von Google, Lizenz: <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" style="color: #0ff; text-decoration: none;">Apache 2.0</a>.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    navigator.vibrate(20);
+                }
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Section reveal on scroll
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => observer.observe(section));
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const parallaxBgs = document.querySelectorAll('.parallax-bg');
+            parallaxBgs.forEach(bg => {
+                const speed = 0.5;
+                const yPos = window.scrollY * speed;
+                bg.style.transform = `translateY(${yPos}px) translateZ(-1px) scale(1.5)`;
+            });
+        });
+    </script>
+</body>
+</html>
