@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Changelog für neue Releases-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"
+        href="https://cracky.ddns.net/services/apps/crackyOS/application/com.crackyOS.pyProjects/msg-encrypt/src/img/favicon.png"
+        type="image/x-icon">
+    <meta content="Wie funktioniert die einfach Textverschlüsselung über msg und was steckt dahinter"
+        name="description">
+    <meta content="https://cracky.ddns.net/services/internal/msg.web/src/img/favicon.png" itemprop="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-blue.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <title>Neues in msg</title>
+</head>
+
+<style>
+    body {
+        font-family: "Rubik", sans-serif;
+    }
+
+    .section {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        filter: blur(5px);
+        transition: opacity 0.8s ease-in, max-height 0.6s ease-out, filter 0.3s ease-out;
+    }
+
+    .section.active {
+        opacity: 1;
+        max-height: 500vh;
+        filter: blur(0px);
+    }
+
+    h4 {
+        background: linear-gradient(45deg, rgb(117, 159, 112), rgb(50, 145, 135));
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        font-weight: 550;
+        user-select: none;
+    }
+
+    .highlight {
+        background-color: #e0f0ff;
+        padding: 10px;
+        border-left: 4px solid rgb(65, 107, 60);
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(145deg, rgb(180, 247, 207), rgb(190, 255, 248), rgb(194, 255, 187));
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .mdl-layout-title,
+    .mdl-navigation__link,
+    .mdl-button {
+        font-weight: 550;
+    }
+
+    .mdl-button {
+        border-radius: 20px;
+        margin-bottom: 40px;
+        user-select: none;
+    }
+
+    .mdl-button:hover,
+    .mdl-button:active {
+        box-shadow: none;
+        transition: 0.2s linear;
+        background-color: rgb(22, 100, 92) !important;
+        color: rgb(255, 230, 128);
+    }
+
+    .mdl-layout__drawer-button {
+        user-select: none;
+    }
+
+    .mdl-layout-title {
+        user-select: none;
+    }
+
+    .mdl-navigation__link {
+        user-select: none;
+    }
+
+    ul,
+    ol {
+        text-align: left;
+    }
+
+    code {
+        background-color: rgba(177, 177, 177, 0.578);
+        border-radius: 4px;
+        height: 10px;
+    }
+
+
+    .imprintBtnLink {
+        text-decoration: none;
+        user-select: none;
+    }
+
+    .imprintBtnLink:active,
+    .imprintBtnLink:hover {
+        text-decoration: underline !important;
+    }
+
+    div.msgLogo {
+        margin-top: 45px;
+        height: 200px;
+        width: 200px;
+        background: linear-gradient(145deg, rgb(101, 248, 162), rgb(99, 187, 159), rgb(193, 119, 193), rgb(182, 182, 98), rgb(5, 170, 154), rgb(104, 212, 92));
+        border-radius: 35px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    img.logo {
+        margin-top: 5px;
+        height: 190px;
+        width: 190px;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg) scale(1);
+        }
+
+        20% {
+            transform: rotate(20deg) scale(1.05);
+        }
+
+        100% {
+            transform: rotate(360deg) scale(1);
+        }
+    }
+
+    .spin-once {
+        animation: spin 0.7s ease-in-out;
+    }
+</style>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title" id="masterTitle">msg-encrypt</span>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation">
+                    <a id="homeIcon" class="mdl-navigation__link" style="display: none;"
+                        onclick="showSection('home', 'msg-encrypt'); navigator.vibrate(20);">
+                        <i class="material-icons">home</i>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Menü</span>
+            <nav class="mdl-navigation">
+                <a class="mdnavlink mdl-navigation__link" id="homeLink" onclick="showSection('home', 'msg-encrypt');"
+                    style="display: none;">Startseite</a>
+                <a class="mdnavlink mdl-navigation__link" id="imprintLink"
+                    onclick="showSection('imprint', 'Impressum'); hideLink('imprintLink');">Impressum</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <center>
+                    <div id="home" class="section active" style="max-width: 80%;">
+                        <br><br>
+                        <div class="msgLogo"
+                            style="user-select: none; pointer-events: none; transform: scale(0.6); margin-top: -30px!important;">
+                            <img class="logo" loading="lazy"
+                                src="https://cracky.ddns.net/services/apps/crackyOS/application/com.crackyOS.pyProjects/msg-encrypt/android.app/icon.png">
+                        </div>
+                        <h4 style="text-align: left;">msg v7.0.0</h4>
+                        <p style="text-align: justify!important;">
+                            Willkommen zu <strong>msg v7.0.0</strong> – der neuen Version der App für sichere, schnelle und verschlüsselte Nachrichten!<br>
+                            <br> Siehe dir hier alle neuen Funktionen und Verbesserungen an, die dir helfen, deine Kommunikation noch sicherer zu gestalten.
+                            <br><br>
+                        </p>
+                        <br><br>
+                        <button
+                            onclick="showSection('chg1', 'PKI'); navigator.vibrate(20);"
+                            type="button" class="mdl-button mdl-button--raised mdl-button--colored ">
+                            →&nbsp;&nbsp;entdecke Neus in msg v7
+                        </button>
+                    </div>
+
+                    <div id="chg1" class="section" style="max-width: 80%;">
+                        <h4>Public-Key-Infrastructure</h4>
+                        <p style="text-align: justify!important;">Die Public-Key-Infrastruktur (PKI) ist ein System zur Verwaltung von digitalen Zertifikaten und Schlüsseln. Sie ermöglicht sichere Kommunikation und Authentifizierung in digitalen Netzwerken.
+                            <br><br>
+                            msg nutzt PKI, um Nachrichten sicher zu verschlüsseln und zu signieren. Jeder Benutzer hat ein Schlüsselpaar: einen privaten Schlüssel, der geheim bleibt, und einen öffentlichen Schlüssel, der mit anderen geteilt wird.
+                            <br><br>
+                            Wenn du eine Nachricht sendest, wird sie mit dem öffentlichen Schlüssel des Empfängers verschlüsselt. Nur der Empfänger kann sie mit seinem privaten Schlüssel entschlüsseln. Dadurch wird sichergestellt, dass nur der beabsichtigte Empfänger die Nachricht lesen kann.
+                            <br><br>
+                            Zusätzlich signiert der Absender die Nachricht mit seinem privaten Schlüssel. Beim Empfänger wird die Signatur mit dem öffentlichen Schlüssel des Absenders überprüft, um sicherzustellen, dass die Nachricht tatsächlich vom Absender stammt und nicht verändert wurde.
+                        </p>
+                        <button
+                            onclick="showSection('chg2', 'Kontakte'); navigator.vibrate(20);"
+                            type="button" class="mdl-button mdl-button--raised mdl-button--colored ">
+                            weiter zu den Kontakten
+                        </button>
+                        <br><br>
+                    </div>
+
+                    <div id="chg2" class="section" style="width: 80%;">
+                        <h4>Kontakte</h4>
+                        <p style="text-align: justify!important;">
+                            msg v7.0.0 führt um über PKI zu kommunizieren eine Kontaktverwaltung ein, die es Benutzern ermöglicht, Nachrichten einfach mit den öffentlichen Schlüsseln ihrer Kontakte einfacher zu verschlüsseln.
+                            <br><br>
+                            Mit der Kontaktverwaltung werden alle Kontakte automatisch hinzugefügt, bearbeitet und gelöscht. Jeder Kontakt kann einen öffentlichen Schlüssel haben, der für die Verschlüsselung von Nachrichten verwendet wird. Wenn du eine Nachricht an einen Kontakt sendest, wird sie automatisch mit dem öffentlichen Schlüssel des Kontakts verschlüsselt.
+                            <br><br>
+                            Zur Personalisierung kannst du jeden beliebigen Kontakt als Favorit markieren. Favorisierte Kontakte werden in der Kontaktliste hervorgehoben und können schneller ausgewählt werden.
+                            <br><br>
+                        </p>
+                        <button
+                            onclick="showSection('chg3', 'Kleinigkeiten'); navigator.vibrate(20);"
+                            type="button" class="mdl-button mdl-button--raised mdl-button--colored ">
+                            weitere Neuigkeiten
+                        </button>
+                        <br><br>
+                    </div>
+
+                    <div id="chg3" class="section" style="width: 80%;">
+                        <h4>Kleinere Neuigkeiten</h4>
+                        <p style="text-align: justify!important;">
+                            msg v7.0.0 bringt eine Reihe von neuen Funktionen und Verbesserungen mit sich, die die Benutzererfahrung verbessern und die Sicherheit erhöhen:
+                        </p>
+                        <ul>
+                            <li>Verbesserte grafische Benutzeroberfläche für eine intuitivere Bedienung</li>
+                            <li style="margin-top: 8px;">Optimale Anzeige von längeren Nachrichten zur besseren Lesbarkeit</li>
+                            <li style="margin-top: 8px;">Optimierte Leistung für schnellere und zuverlässigere Verschlüsselung</li>
+                            <li style="margin-top: 8px;">Erweiterte Sicherheitsfunktionen, einschließlich verbesserter Verschlüsselungsalgorithmus</li>
+                        </ul>
+                        <button
+                            onclick="showSection('download', 'Download'); navigator.vibrate(20);"
+                            type="button" class="mdl-button mdl-button--raised mdl-button--colored ">
+                            downloade msg
+                        </button>
+                        <br><br>
+                    </div>
+
+                    <div id="download" class="section" style="max-width: 90%;">
+                        <h4>Downloade msg</h4>
+                        <p style="text-align: justify!important;">
+                            msg ist eine Android-App, die auf GitHub bereitgestellt wird. Du kannst die neueste Version von msg
+                            direkt von der <a href="https://github.com/cracky22/msg_encrypt/releases/tag/7.0.0"
+                                target="_blank" rel="noopener noreferrer">GitHub-Seite</a> herunterladen.
+                                <br><br>
+                            Der v7.0.0 Release wird vorraussichtlich am 17.07.2025 veröffentlicht.
+                            <br><br>
+                        </p>
+                        <br><br>
+                        <button onclick="showSection('home', 'msg-encrypt'); navigator.vibrate(20);" type="button"
+                            class="mdl-button mdl-button--raised mdl-button--colored ">
+                            zur Startseite
+                        </button>
+                        <br>
+                        <a onclick="showSection('imprint', 'Impressum'); hideLink('imprintLink');"
+                            clss="imprintBtnLink">Impressum</a>
+                    </div>
+
+                    <div id="imprint" class="section">
+                        <br><br><br>
+                        <div class="msgLogo" id="msgLogo">
+                            <img class="logo" id="logo" loading="lazy"
+                                src="https://cracky.ddns.net/services/apps/crackyOS/application/com.crackyOS.pyProjects/msg-encrypt/android.app/icon.png">
+                        </div>
+                        <br><br>
+                        &copy; <a href="https://cracky.ddns.net/" target="_blank"
+                            style="color: rgb(0, 0, 0,); text-decoration: none;">cracky></a> by <a
+                            href="https://cracky.ddns.net/about%20me" target="_blank">Martin Blieninger</a>
+                        <br>
+                        Diese Website wird gehostet mit <a href="https://pages.github.com/" target="_blank"
+                            style="color: rgb(8, 135, 43);">GitHub
+                            Pages</a>.
+                        <br>
+                        Diese Website verwendet Material Design Lite von Google,<br>Lizenz: <a
+                            href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank"
+                            style="color: rgb(158, 33, 101);">Apache 2.0</a>.
+                        <br><br>
+                        <button onclick="showSection('home', 'msg-encrypt'); hideLink('homeLink');" type="button"
+                            class="mdl-button mdl-button--raised mdl-button--colored ">
+                            zur Startseite
+                        </button>
+                    </div>
+
+                    <div id="secret" class="section">
+                        <br>
+                        <pre>ist leer :)</pre>
+                        <br><br>
+                        <button onclick="showSection('home', 'msg-encrypt');" type="button"
+                            class="mdl-button mdl-button--raised mdl-button--colored ">
+                            zur Startseite
+                        </button>
+                    </div>
+                </center>
+            </div>
+
+            <script>
+                function showSection(id, title) {
+                    console.log(`showSection(id=[${id}], title=[${title}]);`);
+                    const sections = document.querySelectorAll('.section');
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+
+                    const target = document.getElementById(id);
+                    if (target) {
+                        target.classList.add('active');
+                    }
+                    if (title) {
+                        setTimeout(() => {
+                            document.getElementById("masterTitle").innerText = title;
+                        }, 400);
+                    }
+                    if (id !== "home") {
+                        setTimeout(() => {
+                            document.getElementById("homeIcon").style.display = "block";
+                            document.getElementById("homeLink").style.display = "block";
+                        }, 400);
+                    } else {
+                        setTimeout(() => {
+                            document.getElementById("homeIcon").style.display = "none";
+                            document.getElementById("homeLink").style.display = "none";
+                            document.getElementById("masterTitle").innerText = "msg-encrypt";
+                        }, 400);
+                    }
+                }
+
+                function hideLink(id) {
+                    console.log(`hideLink(id=[${id}]);`);
+                    const sections = document.querySelectorAll('.mdnavlink');
+                    sections.forEach(section => {
+                        section.style.display = "block";
+                    });
+                    if (id) {
+                        setTimeout(() => {
+                            document.getElementById(id).style.display = "none";
+                        }, 500);
+                    }
+                }
+
+
+                let clickCount = 0;
+                const img = document.getElementById('msgLogo');
+
+                img.addEventListener('click', () => {
+                    clickCount++;
+
+                    if (clickCount < 3) {
+                        navigator.vibrate(80);
+                        img.classList.remove('spin-once');
+                        void img.offsetWidth;
+                        img.classList.add('spin-once');
+                    }
+
+                    if (clickCount === 3) {
+                        navigator.vibrate(300);
+                        setTimeout(() => {
+                            navigator.vibrate(50);
+                            setTimeout(() => {
+                                navigator.vibrate(50);
+                                setTimeout(() => {
+                                    navigator.vibrate(100);
+                                }, 100);
+                            }, 100);
+                        }, 100);
+                        document.getElementById("imprintLink").style.display = "block";
+                        showSection('secret', "Geheimes Menü");
+                        clickCount = 0;
+                    }
+                });
+            </script>
+        </main>
+    </div>
+</body>
+
+</html>
