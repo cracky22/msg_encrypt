@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="https://cracky.ddns.net/services/apps/crackyOS/application/com.crackyOS.pyProjects/msg-encrypt/src/img/favicon.png" type="image/x-icon">
     <meta content="Welche Neuigkeiten gibt es in msg v7.0.0" name="description">
     <meta content="https://cracky.ddns.net/services/internal/msg.web/src/img/favicon.png" itemprop="image">
@@ -25,6 +25,7 @@
             color: #fff;
             overflow-x: hidden;
             line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling in iOS */
         }
 
         header {
@@ -61,14 +62,22 @@
             font-size: 1.5rem;
             font-weight: 800;
             color: #fff;
+            line-height: 1.2;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
         }
 
         nav a {
             color: #fff;
             text-decoration: none;
             font-size: 1rem;
+            font-weight: 600;
             opacity: 0.7;
             transition: opacity 0.3s ease;
+            padding: 10px;
         }
 
         nav a:hover {
@@ -83,7 +92,7 @@
             justify-content: center;
             align-items: center;
             padding: 80px 5%;
-            min-height: calc(100vh - 80px); /* Adjusted for header */
+            min-height: calc(100vh - 80px);
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 1s ease, transform 1s ease;
@@ -189,7 +198,7 @@
         /* Mobile Optimizations */
         @media (max-width: 768px) {
             header {
-                padding: 15px 4%;
+                padding: 12px 4%;
             }
 
             .logo-container img {
@@ -203,6 +212,7 @@
 
             nav a {
                 font-size: 0.9rem;
+                padding: 8px;
             }
 
             .section {
@@ -229,8 +239,8 @@
             }
 
             .card[data-tilt] {
-                transform: perspective(500px); /* Reduced for mobile performance */
-                --tilt-max: 5; /* Less pronounced tilt on mobile */
+                transform: perspective(500px);
+                --tilt-max: 5;
             }
         }
 
@@ -242,6 +252,10 @@
 
             .logo-text {
                 font-size: 1.75rem;
+            }
+
+            nav a {
+                font-size: 1.1rem;
             }
 
             .card {
@@ -263,7 +277,7 @@
             }
 
             .parallax-bg {
-                transform: translateZ(-2px) scale(2); /* Enhanced depth for desktop */
+                transform: translateZ(-2px) scale(2);
             }
         }
     </style>
@@ -392,7 +406,7 @@
         window.addEventListener('scroll', () => {
             const parallaxBgs = document.querySelectorAll('.parallax-bg');
             parallaxBgs.forEach(bg => {
-                const speed = window.innerWidth > 768 ? 0.5 : 0.3; // Reduced speed on mobile
+                const speed = window.innerWidth > 768 ? 0.5 : 0.3;
                 const yPos = window.scrollY * speed;
                 bg.style.transform = `translateY(${yPos}px) translateZ(-1px) scale(${window.innerWidth > 768 ? 2 : 1.5})`;
             });
@@ -403,6 +417,12 @@
             VanillaTilt.init(document.querySelectorAll('.card'), {
                 max: 5,
                 speed: 600,
+                glare: false
+            });
+        } else {
+            VanillaTilt.init(document.querySelectorAll('.card'), {
+                max: 10,
+                speed: 400,
                 glare: false
             });
         }
