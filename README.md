@@ -1,3 +1,4 @@
+[![Merge master into all branches](https://github.com/cracky22/msg-encrypt/actions/workflows/merge-master.yml/badge.svg)](https://github.com/cracky22/msg-encrypt/actions/workflows/merge-master.yml)
 # msg-encrypt (⌐■_■)
 
 msg-encrypt ist ein Programm mitdem man Textnachrichten unleserlich verschlüsseln kann (Anwendungszweck: Whatsapp / Signal).
