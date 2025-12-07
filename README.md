@@ -1,4 +1,3 @@
-[![Merge master into all branches](https://github.com/cracky22/msg-encrypt/actions/workflows/merge-master.yml/badge.svg)](https://github.com/cracky22/msg-encrypt/actions/workflows/merge-master.yml)
 # msg-encrypt (⌐■_■)
 
 msg-encrypt ist ein Programm mitdem man Textnachrichten unleserlich verschlüsseln kann (Anwendungszweck: Whatsapp / Signal).
@@ -88,4 +87,5 @@ Die Android-App verfügt über folgende Drittanbieter Bibliotheken:
 - [purify.js](https://cdnjs.com/libraries/dompurify)
 
 [^1]: pyperclip ist nur auf Windows und Mac verfügbar, kopieren in ubuntu via Strg+c / Strg+v bzw Rechtsklick kopieren / einfügen
+
 [^2]: Programm bitte immer so verlassen => Protokolldateien werden erst bei `exit` übermittelt
